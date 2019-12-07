@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/part8_1style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://jqueryui.com/effect/"></script>
+    <script src="../js/BMICalcHelper.js"></script>
+
+
+
+
+    <meta name="author" content="ighodalo ijagbone">
+    <title>P8_1</title>
+    <script>
+        "use strict"
+        $(document).ready(function () {
+
+            $("#tabs").tabs();
+
+            $('#imp_form').validate();
+            $('#met_form').validate();
+
+
+            $('#imp_form').submit(function (e) {
+
+                e.preventDefault();
+                var imp_height = $("#imp_field_1").val();
+
+                var imp_weight = $("#imp_field_2").val();
+                var imp_bmi = (calcImperialBMI(imp_height, imp_weight)).toFixed(2);
+
+
+
+                // console.log('imperial press')
+
+                if (!$("#imp_form").valid()) {
+                    $(this).effect("shake");
+                    return
+
+                } else {
+
+                    //success message passed with in object literals to give a cleaner and more organised code
+                    // $("#imp_bmi").text(`Your BMI is ${imp_bmi}`);
+                    $("#logo").effect("bounce", "slow");
+
+                    if (imp_bmi >= 30) {
+
+                        $("#imp_bmi").text(`Your BMI is ${imp_bmi}, you are obese`);
+
+                    }
+                    if ((met_bmi >= 25) && (imp_bmi <= 29.9)) {
+                        $("#imp_bmi").text(`Your BMI is ${imp_bmi}, you are overweight`);
+
+                    }
+                    if ((imp_bmi >= 18.5) && (imp_bmi <= 24.9)) {
+                        $("#imp_bmi").text(`Your BMI is ${imp_bmi}, you have a normal weight`);
+
+                    }
+                    if (imp_bmi <= 18.5) {
+                        $("#imp_bmi").text(`Your BMI is ${imp_bmi}, you are underweight`);
+
+                    }
+
+
+                }
+
+            });
+
+
+            $("#met_form").submit(function (e) {
+
+
+                e.preventDefault();
+                var met_height = $("#met_field_1").val();
+                var met_weight = $("#met_field_2").val();
+                var met_bmi = (calcMetricBMI(met_height, met_weight)).toFixed(2);
+
+
+                // console.log('metric press')
+
+                if (!$("#met_form").valid()) {
+                    $(this).effect("shake");
+
+                    return
+
+                } else {
+
+                    //success message passed with in object literals to give a cleaner and more organised code with predefined ranges of the bmi index
+                    // $("#met_bmi").text(`Your BMI is ${met_bmi}`);
+                    $("#logo").effect("bounce", "slow");
+
+                    if (met_bmi >= 30) {
+
+                        $("#met_bmi").text(`Your BMI is ${met_bmi}, you are obese`);
+
+                    }
+                    if ((met_bmi >= 25) && (met_bmi <= 29.9)) {
+                        $("#met_bmi").text(`Your BMI is ${met_bmi}, you are overweight`);
+
+                    }
+                    if ((met_bmi >= 18.5) && (met_bmi <= 24.9)) {
+                        $("#met_bmi").text(`Your BMI is ${met_bmi}, you have a normal weight`);
+
+                    }
+                    if (met_bmi <= 18.5) {
+                        $("#met_bmi").text(`Your BMI is ${met_bmi}, you are underweight`);
+
+                    }
+
+
+
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <div class="wrap-item">
+            <h1>LucaSays</h1>
+            <img id="logo" src="../images/logo.png" alt="" srcset="">
+        </div>
+        <p class="copy">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem veniam incidunt deleniti. At eligendi
+            quae saepe laborum nihil incidunt iure.
+
+
+        </p>
+        <div id="tabs">
+            <ul>
+
+                <li><a href="#tab-1"> Property</a> </li>
+                <!-- <li><a href="#tab-2"> Metric</a></li> -->
+            </ul>
+            <div id="tab-1">
+                <form id="imp_form" action="" class="form-style">
+                    <label for="#imp_field_1" class="label"> Height</label><br>
+                    <input type="number" class="input_field " name="imp_field_1" id="imp_field_1" required
+                        placeholder="Type here"><br>
+
+                    <label for="#imp_field_2" class="label"> Weight</label><br>
+                    <input type="number" class="input_field" name="imp_field_2" id="imp_field_2" required
+                        placeholder="Type here"><br>
+                    <p id="imp_bmi" class="bmi"></p>
+
+                    <button type="submit" class="btn">Publish</button>
+                </form>
+            </div>
+
+            <!-- <div id="tab-2">
+                <form id="met_form" action="" class="form-style">
+                    <label for="#met_field_1" class="label"> Height <Span class="units">Centimeters</Span> </label><br>
+                    <input type="number" class="input_field " name="met_field_1" id="met_field_1" required
+                        placeholder="Type here"><br>
+                    <label for="#met_field_2" class="label"> Weight <Span class="units">Kilograms</Span></label><br>
+                    <input type="number" class="input_field" name="met_field_2" id="met_field_2" required
+                        placeholder="Type here"><br>
+                    <p id="met_bmi" class="bmi"></p>
+
+
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+            </div> -->
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

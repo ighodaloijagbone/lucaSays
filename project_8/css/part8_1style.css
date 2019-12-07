@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html {
+    background-color: rgb(2, 54, 100);
+ 
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+
+    background-image: url(../images/bg.png);
+    background-repeat: repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+h1{
+   
+   color: rgb(20, 69, 136);
+   font-size: 1.9em;
+   font-weight: 900;
+   margin: 0 15px 30px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0;
+    width: 100vw;
+}
+
+nav img {
+    background-color: aliceblue;
+    border-radius: 50%;
+    padding: 10px;
+
+}
+
+body {
+    margin: 20px auto;
+
+    /* background-color: rgb(26, 26, 26); */
+    color: azure;
+    border-radius: 20px;
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.copy{
+    color: rgb(14, 84, 163);
+    margin: 0 15px 16px;
+}
+
+
+span {
+
+    width: 100%;
+    word-wrap: break-word;
+    font-weight: bold;
+    color: rgb(0, 36, 68);
+}
+
+#wrapper {
+
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(253, 253, 254);
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 14px 15px rgba(24, 24, 24, 0.26);
+
+
+}
+.wrap-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.btn {
+    padding: 20px 25px;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(122deg, rgba(93, 182, 241, 1) 0%, rgb(0, 112, 204) 100%);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    outline: none;
+    min-width: 100%;
+    margin: 20px 0 0;
+    font-size: 18px;
+
+    transition: ease-out .3s;
+    box-shadow: 0 5px 8px rgba(24, 24, 24, 0.3);
+
+}
+
+.btn:hover {
+    transform: scale(0.99);
+    transition: ease-in .2s;
+    box-shadow: 0 3px 5px rgba(24, 24, 24, 0.4);
+
+}
+
+.label {
+    color: rgb(9, 14, 43);
+
+
+}
+
+.input_field {
+    margin: 10px 0 20px;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 6px 6px rgba(24, 24, 24, 0.061);
+    width: 100%;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+label.error {
+    display: block;
+    color: rgb(235, 93, 93);
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    margin-left: 10px;
+}
+
+input.error {
+
+    border: 1px solid rgb(250, 229, 229);
+}
+
+.input_field:focus {
+    color: cornflowerblue;
+
+
+}
+
+::placeholder {
+    color: rgb(212, 212, 212);
+}
+
+.bmi {
+    color: rgb(17, 54, 128);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.units {
+    color: rgb(54, 86, 228);
+    font-size: .7em;
+}
+
+.ui-corner-all {
+    border: 0px !important;
+}
+.ui-tabs-nav {
+    border: 0px !important;
+    background-color: rgb(255, 255, 255) !important;
+    padding: 2px 16px!important;
+    outline: 0px !important;
+    
+}
+.ui-tabs-tab{
+    border: 0px !important;
+    background-color: rgba(186, 186, 186, 0.13) !important;
+    border-radius: 19px !important;
+    outline: 0px !important;
+  
+}
+.ui-tabs-active {
+    border: 0px !important;
+    background-color: rgb(21, 160, 77) !important;
+    border-radius: 19px !important;
+    outline: 0px !important;
+  
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper {
+        width: 100%;
+    }
+
+}
