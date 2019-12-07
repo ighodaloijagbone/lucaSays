@@ -7,12 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-
         /* *{
            margin: 0;
        }  */
         .wrapper {
-            background-color: rgb(140, 156, 245);
+            background-color: rgb(235, 242, 255);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -67,14 +66,14 @@
         .text {
             width: 100%;
             background-color: rgb(253, 253, 253);
-            padding: .6em;
+            padding: .8em;
         }
 
         .box {
             display: flex;
             width: 100%;
             justify-content: space-around;
-            background-color: rgb(111, 37, 121);
+            background-color: rgb(61, 7, 68);
             padding: .2em;
             color: white;
         }
@@ -87,49 +86,86 @@
             background-color: white;
 
         }
+
+        textarea {
+            text-align: center;
+            width: 80%;
+            height: 100px;
+            font-size: 120%;
+
+
+        }
+
+        #bed_field_1 {
+            width: 30%;
+            height: 50px;
+            font-size: 120%;
+            text-align: center;
+            background: rgba(161, 161, 161, 0.123);
+            border: rgb(204, 59, 59);
+            border-radius: 6px;
+            color: white;
+            margin: 6px 0;
+        }
+
+         .divt   {
+            border: ridge 2px;
+            padding: 5px;
+            width: 100%;
+            min-height: 5em;
+            overflow: auto;
+        }
     </style>
 </head>
 
 <body>
-    <div class="wrapper nz" style="">
-        <div class="imgWrapper">
-            <img class="upload" src="listing.jpg" alt="">
-        </div>
-
-        <h2 class=" title titleAddress nz">Address</h2>
-
-        <p class="text textAddress nz">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos placeat sapiente maiores illo.
-        </p>
-
-        <div class="box nz">
-            <div class="boxSmall nz">
-                <h3 class="nz"> Beds:</h3>
-                <p class="bedsInput nz">2</p>
+    <div class="wrapper nz">
+        <form action="">
+            <div class="imgWrapper">
+                <img class="upload" src="listing.jpg" alt="">
             </div>
-            <div class="boxSmall nz">
-                <h3 class="nz"> Baths:</h3>
-                <p class="bedsInput nz">1</p>
+
+            <h2 class=" title titleAddress nz">Address</h2>
+
+            <p class="text textAddress nz">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos placeat sapiente maiores illo.
+            </p>
+
+            <div class="box nz">
+                <div class="boxSmall nz">
+                    <h3 class="nz"> Beds:</h3>
+                    <!-- <p class="bedsInput nz">2</p> -->
+                    <input type="number" class="input_field " name="bed_field_1" id="bed_field_1" required
+                        placeholder="0"><br>
+                </div>
+                <div class="boxSmall nz">
+                    <h3 class="nz"> Baths:</h3>
+                    <!-- <p class="bedsInput nz">1</p> -->
+                    <input type="number" class="input_field " name="bed_field_1" id="bed_field_1" required
+                        placeholder="0"><br>
+                </div>
             </div>
-        </div>
 
-        <h2 class="title titleAmenities nz"> Amenities</h2>
+            <h2 class="title titleAmenities nz"> Amenities</h2>
 
-        <p class="text textAmenities nz">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque consectetur, consequuntur quisquam culpa
-            aliquam possimus hic amet!
-        </p>
-        <h2 class="title titleNotes nz">Notes</h2>
+            <!-- <p class="text textAmenities nz">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque consectetur, consequuntur quisquam culpa
+                aliquam possimus hic amet!
+            </p> -->
+            <!-- <textarea rows="" class="text"> </textarea> -->
+            <div class="divt" contenteditable=""> what</div>
+            <h2 class="title titleNotes nz">Notes</h2>
 
-        <p class="text textNotes nz">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nisi?
-        </p>
+            <p class="text textNotes nz">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nisi?
+            </p>
 
-        <div class="contact">
-            <p class="phone ">1234567891</p>
-            <p class="emial">testing@gmail.com</p>
-            <img width="30px" src="discord.svg" alt="" class="logo">
-        </div>
+            <div class="contact">
+                <p class="phone ">1234567891</p>
+                <p class="emial">testing@gmail.com</p>
+                <img width="30px" src="discord.svg" alt="" class="logo">
+            </div>
+        </form>
     </div>
 </body>
 
